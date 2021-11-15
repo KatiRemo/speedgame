@@ -2,6 +2,7 @@ import React, {  Component } from 'react';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Circle from './components/Circle';
+import GameOver from './components/GameOver';
 import { circles } from './components/circles';
 
 const getRndInteger = (min, max) => {
@@ -12,6 +13,7 @@ class App extends Component {
   state = {
     score: 0,
     current: 0,
+    gameOver: false,
   };
 
   timer = undefined;
@@ -33,6 +35,7 @@ class App extends Component {
     this.setState({
       current: nextActive,
     });
+
     this.pace *= 0.95;
     this.timer = setTimeout(this.nextCircle, this.pace);
 
@@ -45,11 +48,16 @@ class App extends Component {
 
   stopHandler = () => {
     clearTimeout(this.timer);
-  };
+
+  this.setState({
+    gameOver: true,
+  });
+};
 
   render() {
     return (
       <div>
+        {this.state.gameOver && <GameOver score={this.state.score} />}
         <Header />
         <p>Your score: {this.state.score}</p>
         <div className="circles">
@@ -58,7 +66,8 @@ class App extends Component {
       key={circle.id} 
       color={circle.color} 
       id={circle.id} 
-      click={this.clickHandler} 
+      click={this.clickHandler}
+      active={this.state.current === circle.id}
       />
       ))}
         </div>

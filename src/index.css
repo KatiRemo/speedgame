@@ -7,8 +7,10 @@
 }
 
 body {
-  margin: 0;
   font-family: "Mouse Memoirs", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
   padding: 5rem;
   background-image: linear-gradient(
     90deg,
@@ -24,19 +26,21 @@ header {
 
 h1 {
   font-size: 4rem;
+  margin: 2rem auto;
 }
 
 p {
   font-size: 2rem;
+  margin: 2rem auto;
 }
 
 button {
   background-color: #f0fff0;
   color: #333;
-  border: solid;
+  border: none;
   border-radius: 5%;
-  padding: 20px;
-  margin: 10px;
+  padding: 0.8rem 2rem;
+  margin: 1rem;
   width: 200px;
   height: auto;
   font-family: "Mouse Memoirs", sans-serif;
@@ -56,8 +60,8 @@ button:hover {
 .circle {
   background-color: white;
   color: #333;
-  width: 200px;
-  height: 200px;
+  width: 175px;
+  height: 175px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -67,6 +71,12 @@ button:hover {
 
 .circle p {
   font-size: 2rem;
+}
+
+.active {
+  /* box-shadow: 0 0 25px whitesmoke;
+  border: 25px solid whitesmoke; */
+  background: url("/src/assets/dd1.svg");
 }
 
 footer {
