@@ -7,8 +7,6 @@ const Header = () => {
                 <div>
                 </div>
                 <h1>Catch Donald!</h1>
-                <br />
-            <h2>Your score is: </h2>
         </header>
     );
 };

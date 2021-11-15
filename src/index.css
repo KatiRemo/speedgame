@@ -1,16 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "Mouse Memoirs", sans-serif;
-  background-color: aquamarine;
+  padding: 5rem;
+  background-image: linear-gradient(
+    90deg,
+    rgb(10, 245, 167) 0%,
+    rgb(60, 232, 245) 100%
+  );
+}
+
+header {
   display: flex;
   justify-content: center;
-  align-content: center;
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 p {
@@ -18,13 +31,13 @@ p {
 }
 
 button {
-  background-color: #ecffdc;
+  background-color: #f0fff0;
   color: #333;
   border: solid;
   border-radius: 5%;
   padding: 20px;
   margin: 10px;
-  width: 100px;
+  width: 200px;
   height: auto;
   font-family: "Mouse Memoirs", sans-serif;
   font-size: 2rem;
@@ -32,13 +45,12 @@ button {
 
 button:hover {
   cursor: pointer;
-  background-color: gray;
+  background-color: #00ff7f;
 }
 .circles {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
 }
 
 .circle {
@@ -53,18 +65,12 @@ button:hover {
   margin: 1rem;
 }
 
-.pink {
-  background-color: rgb(252, 159, 229);
+.circle p {
+  font-size: 2rem;
 }
 
-.blue {
-  background-color: rgb(82, 229, 245);
-}
-
-.gray {
-  background-color: rgb(204, 203, 203);
-}
-
-.yellow {
-  background-color: #ffff66;
+footer {
+  display: flex;
+  justify-content: center;
+  align-content: flex-end;
 }
