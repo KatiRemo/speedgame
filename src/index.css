@@ -1,13 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Mouse Memoirs", sans-serif;
+  background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  font-size: 3rem;
+}
+
+p {
+  font-size: 2rem;
+}
+
+button {
+  background-color: #ecffdc;
+  color: #333;
+  border: solid;
+  border-radius: 5%;
+  padding: 20px;
+  margin: 10px;
+  width: 100px;
+  height: auto;
+  font-family: "Mouse Memoirs", sans-serif;
+  font-size: 2rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: gray;
+}
+.circles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.circle {
+  background-color: white;
+  color: #333;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+
+.pink {
+  background-color: rgb(252, 159, 229);
+}
+
+.blue {
+  background-color: rgb(82, 229, 245);
+}
+
+.gray {
+  background-color: rgb(204, 203, 203);
+}
+
+.yellow {
+  background-color: #ffff66;
 }
