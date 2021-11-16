@@ -29,8 +29,13 @@ class App extends Component {
 
   timer = undefined;
 
+  // clickPlay = () => {
+  //   if (clickSound)
+  // }
+
   clickHandler = (id) => {
     gameClickSound.play();
+
     console.log("you clicked: ", id);
 
     if (this.state.current !== id) {
@@ -69,6 +74,7 @@ class App extends Component {
 
   startHandler = () => {
     gameStartSound.play();
+    gameStartSound.loop = true;
     this.nextCircle();
     this.setState({
       gameStart: true,
@@ -84,6 +90,7 @@ class App extends Component {
     gameOver: true,
     current: 0,
     gameStart: false,
+    // gameStopped: true,
   });
 };
 
@@ -118,6 +125,7 @@ popupHandler = (e) => {
       click={() => this.clickHandler(circle.id)}
       active={this.state.current === circle.id}
       disabled={this.state.gameStart}
+      // disabled={this.state.gameStopped}
       />
       ))}
         </div>
@@ -125,7 +133,7 @@ popupHandler = (e) => {
         <button disabled={this.state.gameStart} onClick={this.startHandler}>
           Start
           </button>
-        <button onClick={this.stopHandler}>Stop</button>
+        <button disabled={this.state.gameStopped} onClick={this.stopHandler}>Stop</button>
       </div>
       <div>
         <Footer />

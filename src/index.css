@@ -43,10 +43,16 @@ button {
   font-size: 2rem;
 }
 
-/* button:hover {
-  cursor: pointer;
-  background-color: #00ff7f;
-} */
+button:hover {
+  /* cursor: pointer; */
+  background-color: #ffa07a;
+}
+
+button[disabled],
+button:hover[disabled] {
+  opacity: 30%;
+}
+
 .circles {
   display: flex;
   flex-wrap: wrap;
