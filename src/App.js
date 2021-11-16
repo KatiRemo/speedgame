@@ -5,6 +5,14 @@ import Circle from './components/Circle';
 import GameOver from './components/GameOver';
 import { circles } from './components/circles';
 
+import startSound from './assets/sounds/fluffing-a-duck.mp3';
+import endSound from './assets/sounds/gameover.mp3';
+import clickSound from './assets/sounds/pop.mp3';
+
+let gameEndSound = new Audio(endSound);
+let gameStartSound = new Audio(startSound);
+let gameClickSound = new Audio(clickSound);
+
 const getRndInteger = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
@@ -13,7 +21,7 @@ class App extends Component {
   state = {
     score: 0,
     current: 0,
-    gameOver: false,
+    showGameOver: false,
     pace: 1500,
     rounds: 0,
     gameStart: false,
@@ -22,6 +30,7 @@ class App extends Component {
   timer = undefined;
 
   clickHandler = (id) => {
+    gameClickSound.play();
     console.log("you clicked: ", id);
 
     if (this.state.current !== id) {
@@ -59,6 +68,7 @@ class App extends Component {
   };
 
   startHandler = () => {
+    gameStartSound.play();
     this.nextCircle();
     this.setState({
       gameStart: true,
@@ -66,6 +76,8 @@ class App extends Component {
   };
 
   stopHandler = () => {
+    gameStartSound.pause();
+    gameEndSound.play();
     clearTimeout(this.timer);
 
   this.setState({
@@ -84,6 +96,11 @@ closeHandler = () => {
   });
 };
 
+popupHandler = (e) => {
+  e.preventDefault();
+  this.setState({ showGameOver: true});
+};
+
   render() {
     return (
       <div>
@@ -100,11 +117,14 @@ closeHandler = () => {
       id={circle.id} 
       click={() => this.clickHandler(circle.id)}
       active={this.state.current === circle.id}
+      disabled={this.state.gameStart}
       />
       ))}
         </div>
       <div>
-        <button disabled={this.state.gameStart} onClick={this.startHandler}>Start</button>
+        <button disabled={this.state.gameStart} onClick={this.startHandler}>
+          Start
+          </button>
         <button onClick={this.stopHandler}>Stop</button>
       </div>
       <div>
