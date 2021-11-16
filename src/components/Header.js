@@ -6,7 +6,7 @@ const Header = () => {
         <header>
                 <div>
                 </div>
-                <h1>Catch Donald!</h1>
+                <h1>Catch The Owl</h1>
         </header>
     );
 };

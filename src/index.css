@@ -76,7 +76,8 @@ button:hover {
 .active {
   /* box-shadow: 0 0 25px whitesmoke;
   border: 25px solid whitesmoke; */
-  background: url("/src/assets/dd1.svg");
+  background: url("/src/assets/owl.svg") no-repeat center;
+  background-size: 80%;
 }
 
 footer {

@@ -14,12 +14,19 @@ class App extends Component {
     score: 0,
     current: 0,
     gameOver: false,
+    pace: 1500,
   };
 
   timer = undefined;
-  pace = 1500;
 
-  clickHandler = () => {
+  clickHandler = (id) => {
+    console.log("you clicked: ", id);
+
+    if (this.state.current !== id) {
+      this.stopHandler();
+      return;
+    }
+
     this.setState({
       score: this.state.score + 10,
     });
@@ -34,10 +41,10 @@ class App extends Component {
 
     this.setState({
       current: nextActive,
+      pace: this.state.pace * 0.95,
     });
 
-    this.pace *= 0.95;
-    this.timer = setTimeout(this.nextCircle, this.pace);
+    this.timer = setTimeout(this.nextCircle, this.state.pace);
 
     console.log("active circle is", this.state.current);
   };
@@ -51,13 +58,24 @@ class App extends Component {
 
   this.setState({
     gameOver: true,
+    current: 0,
+  });
+};
+
+closeHandler = () => {
+  this.setState({
+    gameOver: false,
+    score: 0,
+    pace: 1500,
   });
 };
 
   render() {
     return (
       <div>
-        {this.state.gameOver && <GameOver score={this.state.score} />}
+        {this.state.gameOver && (
+         <GameOver score={this.state.score} close={this.closeHandler} />
+        )}
         <Header />
         <p>Your score: {this.state.score}</p>
         <div className="circles">
@@ -66,7 +84,7 @@ class App extends Component {
       key={circle.id} 
       color={circle.color} 
       id={circle.id} 
-      click={this.clickHandler}
+      click={() => this.clickHandler(circle.id)}
       active={this.state.current === circle.id}
       />
       ))}
