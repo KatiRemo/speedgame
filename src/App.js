@@ -15,6 +15,8 @@ class App extends Component {
     current: 0,
     gameOver: false,
     pace: 1500,
+    rounds: 0,
+    gameStart: false,
   };
 
   timer = undefined;
@@ -29,10 +31,15 @@ class App extends Component {
 
     this.setState({
       score: this.state.score + 10,
+      rounds: 0,
     });
   };
 
   nextCircle = () => {
+    if(this.state.rounds >= 5) {
+      this.stopHandler();
+      return;
+    }
     let nextActive;
 
     do {
@@ -42,15 +49,20 @@ class App extends Component {
     this.setState({
       current: nextActive,
       pace: this.state.pace * 0.95,
+      rounds: this.state.rounds +1,
     });
 
     this.timer = setTimeout(this.nextCircle, this.state.pace);
 
     console.log("active circle is", this.state.current);
+    console.log("round number", this.state);
   };
 
   startHandler = () => {
     this.nextCircle();
+    this.setState({
+      gameStart: true,
+    });
   };
 
   stopHandler = () => {
@@ -59,6 +71,7 @@ class App extends Component {
   this.setState({
     gameOver: true,
     current: 0,
+    gameStart: false,
   });
 };
 
@@ -67,6 +80,7 @@ closeHandler = () => {
     gameOver: false,
     score: 0,
     pace: 1500,
+    rounds: 0,
   });
 };
 
@@ -90,7 +104,7 @@ closeHandler = () => {
       ))}
         </div>
       <div>
-        <button onClick={this.startHandler}>Start</button>
+        <button disabled={this.state.gameStart} onClick={this.startHandler}>Start</button>
         <button onClick={this.stopHandler}>Stop</button>
       </div>
       <div>
