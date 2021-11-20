@@ -90,7 +90,6 @@ class App extends Component {
     gameOver: true,
     current: 0,
     gameStart: false,
-    // gameStopped: true,
   });
 };
 
@@ -103,10 +102,10 @@ closeHandler = () => {
   });
 };
 
-popupHandler = (e) => {
-  e.preventDefault();
-  this.setState({ showGameOver: true});
-};
+// popupHandler = (e) => {
+//   e.preventDefault();
+//   this.setState({ showGameOver: true});
+// };
 
   render() {
     return (
@@ -125,7 +124,6 @@ popupHandler = (e) => {
       click={() => this.clickHandler(circle.id)}
       active={this.state.current === circle.id}
       disabled={this.state.gameStart}
-      // disabled={this.state.gameStopped}
       />
       ))}
         </div>

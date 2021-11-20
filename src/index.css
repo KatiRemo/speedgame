@@ -12,7 +12,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   padding: 5rem;
-  background-image: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
+  background-image: linear-gradient(to top, #96fbc4 0%, #42b9e8 100%);
 }
 
 header {
@@ -95,4 +95,49 @@ footer {
   display: flex;
   justify-content: center;
   align-content: flex-end;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.gameover_popup {
+  background: url("https://images.unsplash.com/photo-1636962027983-500f19243325?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 1.5rem;
+  padding-right: 8rem;
+  width: 60%;
+  min-height: 45%;
+  border-radius: 5%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.gameover_popup h2 {
+  font-size: 2rem;
+}
+
+.gameover_popup button {
+  background: #666699;
+  color: whitesmoke;
+  position: relative;
+  top: 50px;
+  right: 5px;
+  width: 150px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  text-transform: capitalize;
 }
