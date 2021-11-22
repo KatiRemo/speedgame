@@ -141,3 +141,25 @@ footer {
   font-size: 1.1rem;
   text-transform: capitalize;
 }
+
+@media (max-width: 320px) {
+  .container {
+    width: 90%;
+  }
+
+  header img {
+    width: 100%;
+    background: no-repeat fixed center center/cover;
+  }
+
+  .content {
+    flex-direction: row;
+  }
+
+  .circles {
+    size: 50%;
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+  }
+}
