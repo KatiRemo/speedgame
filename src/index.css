@@ -8,11 +8,13 @@
 
 body {
   font-family: "Mouse Memoirs", sans-serif;
+  height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   padding: 5rem;
   background-image: linear-gradient(to top, #96fbc4 0%, #42b9e8 100%);
+  background-attachment: fixed;
 }
 
 header {
@@ -95,6 +97,7 @@ footer {
   display: flex;
   justify-content: center;
   align-content: flex-end;
+  bottom: 0;
 }
 
 .overlay {
@@ -143,23 +146,14 @@ footer {
 }
 
 @media (max-width: 320px) {
-  .container {
-    width: 90%;
-  }
-
-  header img {
-    width: 100%;
-    background: no-repeat fixed center center/cover;
-  }
-
-  .content {
-    flex-direction: row;
-  }
-
-  .circles {
+  /* .circles {
     size: 50%;
-    background-color: red;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: red;
+  } */
+
+  body {
+    background-color: green;
   }
 }
