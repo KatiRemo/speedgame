@@ -177,7 +177,7 @@ footer {
   }
 }
 
-@media (min-width: 451px) {
+@media (min-width: 451px) and (max-width: 599px) {
   .circle {
     height: 100px;
     width: 100px;
@@ -209,7 +209,7 @@ footer {
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 600px) and (max-width: 700px) {
   .circle {
     height: 120px;
     width: 120px;
@@ -229,7 +229,7 @@ footer {
   }
 }
 
-@media (min-width: 701px) and (max-width: 800px) {
+@media (min-width: 701px) and (max-width: 988px) {
   .circle {
     height: 150px;
     width: 150px;
