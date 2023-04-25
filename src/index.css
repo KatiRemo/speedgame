@@ -46,7 +46,6 @@ button {
 }
 
 button:hover {
-  /* cursor: pointer; */
   background-color: #ffa07a;
 }
 
@@ -71,7 +70,6 @@ button:hover[disabled] {
   justify-content: center;
   align-items: center;
   margin: 1rem;
-  /* cursor: pointer; */
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>❤️</text></svg>")
       16 0,
     auto; /*!emojicursor.app*/
@@ -87,8 +85,6 @@ button:hover[disabled] {
 }
 
 .active {
-  /* box-shadow: 0 0 25px whitesmoke;
-  border: 25px solid whitesmoke; */
   background: url("/src/assets/owl.svg") no-repeat center;
   background-size: 80%;
 }
@@ -137,7 +133,7 @@ footer {
   background: #666699;
   color: whitesmoke;
   position: relative;
-  top: 50px;
+  top: 150px;
   right: 5px;
   width: 150px;
   cursor: pointer;
@@ -221,10 +217,12 @@ footer {
     flex-wrap: nowrap;
   }
   .gameover_popup {
-    width: 60%;
+    width: 70%;
+    padding: 5rem;
+    padding-right: 12rem;
   }
   .gameover_popup button {
-    top: 100px;
+    top: 80px;
     left: 40px;
   }
 }
@@ -238,9 +236,14 @@ footer {
     display: flex;
     flex-wrap: nowrap;
   }
+  .gameover_popup {
+    width: 70%;
+    padding: 5rem;
+    padding-right: 12rem;
+  }
   .gameover_popup button {
-    top: 50px;
-    right: 5px;
-  } 
+    top: 80px;
+    left: 40px;
+  }
 }
 
