@@ -160,6 +160,21 @@ footer {
   body {
     padding: 10px;
   }
+  .gameover_popup h2 {
+    font-size: 1.5rem;
+  }
+  .gameover_popup {
+    padding: 2rem;
+    padding-right: 11rem;
+    width: 90%;
+    min-height: 55%;
+    display: flex;
+    justify-content: center;
+  }
+  .gameover_popup button {
+    top: 100px;
+    left: 50%;
+  }
 }
 
 @media (min-width: 451px) {
@@ -177,6 +192,21 @@ footer {
   body {
     padding: 10px;
   }
+  .gameover_popup h2 {
+    font-size: 1.5rem;
+  }
+  .gameover_popup {
+    padding: 1.5rem;
+    padding-right: 8rem;
+    width: 70%;
+    min-height: 45%;
+    display: flex;
+    justify-content: center;
+  }
+  .gameover_popup button {
+    top: 100px;
+    left: 30%;
+  }
 }
 
 @media (min-width: 600px) {
@@ -190,9 +220,16 @@ footer {
     display: flex;
     flex-wrap: nowrap;
   }
+  .gameover_popup {
+    width: 60%;
+  }
+  .gameover_popup button {
+    top: 100px;
+    left: 40px;
+  }
 }
 
-@media (min-width: 701px) and (min-width: 800px) {
+@media (min-width: 701px) and (max-width: 800px) {
   .circle {
     height: 150px;
     width: 150px;
@@ -201,4 +238,9 @@ footer {
     display: flex;
     flex-wrap: nowrap;
   }
+  .gameover_popup button {
+    top: 50px;
+    right: 5px;
+  } 
 }
+
